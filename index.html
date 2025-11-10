@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PosAndroid Dashboard</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>PosAndroid JaCoCo Coverage Dashboard</h1>
+    </header>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Please wait, loading data...</p>
+    </div>
+
+    <div class="breadcrumb" id="breadcrumb">Home</div>
+
+    <div class="tabs">
+        <div class="tab active" onclick="filterTab('all', event)">All Packages</div>
+        <div class="tab" onclick="filterTab('top', event)">Top Performers</div>
+        <div class="tab" onclick="filterTab('attention', event)">Needs Attention</div>
+    </div>
+
+    <div id="alert"></div>
+
+    <div class="top-section">
+        <div id="summary"></div>
+
+        <div class="charts-row">
+            <div class="small-chart">
+                <canvas id="packageChart"></canvas>
+                <p>Package Status</p>
+            </div>
+            <div class="small-chart">
+                <canvas id="averageChart"></canvas>
+                <p>Average Coverage</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="searchBox" placeholder="Search..." />
+    </div>
+
+    <div id="table-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
